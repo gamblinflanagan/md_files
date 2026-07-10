@@ -32,6 +32,13 @@ const meta: ApiMeta = {
       defaultValue: 'Acme Insurance Corp',
     },
     {
+      name: 'owner',
+      type: 'string',
+      required: true,
+      description: 'Current owner of the organization. Letters A-Z and a-z only.',
+      defaultValue: 'JaneDoe',
+    },
+    {
       name: 'taxIdType',
       type: 'select',
       required: true,
@@ -70,6 +77,7 @@ headers = {
 }
 payload = {
     "legalName": "Acme Insurance Corp",
+    "owner": "JaneDoe",
     "taxIdType": "EIN",
     "taxId": "12-3456789",
     "orgType": "Corporation",
@@ -88,6 +96,7 @@ print(response.json())`,
     },
     body: JSON.stringify({
       legalName: "Acme Insurance Corp",
+      owner: "JaneDoe",
       taxIdType: "EIN",
       taxId: "12-3456789",
       orgType: "Corporation",
@@ -105,6 +114,7 @@ HttpClient client = HttpClient.newHttpClient();
 String body = """
     {
       "legalName": "Acme Insurance Corp",
+      "owner": "JaneDoe",
       "taxIdType": "EIN",
       "taxId": "12-3456789",
       "orgType": "Corporation",
@@ -127,6 +137,7 @@ System.out.println(response.body());`,
   -H "Content-Type: application/json" \\
   -d '{
     "legalName": "Acme Insurance Corp",
+    "owner": "JaneDoe",
     "taxIdType": "EIN",
     "taxId": "12-3456789",
     "orgType": "Corporation",
@@ -136,6 +147,7 @@ System.out.println(response.body());`,
   exampleResponse: `{
   "id": "org_8f2c4a1e9b",
   "legalName": "Acme Insurance Corp",
+  "owner": "JaneDoe",
   "taxIdType": "EIN",
   "taxId": "12-3456789",
   "orgType": "Corporation",
